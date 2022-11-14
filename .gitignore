@@ -1,0 +1,17 @@
+node_modules
+uploads/
+dist/
+
+.env
+
+.history
+.vscode
+
+node_modules
+bower_components
+
+
+.idea
+.node_history
+npm-debug.log
+public/files/*
