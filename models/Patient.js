@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-    const Clinic = sequelize.define('Clinic', {
-        clinic_id: {
+    const Patient = sequelize.define('Patient', {
+        patient_id: {
             type: DataTypes.INTEGER(10),
             allowNull: false,
             autoIncrement: true,
@@ -48,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
 
     }, {
         freezeTableName: true,
-        tableName: 'cms_clinics',
+        tableName: 'cms_aptients',
         underscored: true,
         timestamps: true,
         createdAt: 'created_at',
@@ -59,9 +59,9 @@ module.exports = (sequelize, DataTypes) => {
             }
         ]
     });
-    Clinic.associate = function (models) {
+    Patient.associate = function (models) {
         // associations can be defined here
     };
    
-    return Clinic;
+    return Patient;
 };

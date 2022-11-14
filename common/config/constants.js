@@ -3,11 +3,15 @@ const constant = {
 		PRODUCTION: 'production',
 		DEV: 'dev',
 	},
-	roles: {
-		SUPER_ADMIN: 'super_admin',
-		CLINIC_ADMIN: 'clinic_admin',
+	primary_roles: {
+		SUPER_ADMIN: 'super admin',
+		PHYAICIAN: 'physician',
+		EMPLOYEE: 'employee'
+	},
+	secondary_roles: {
+		CLINIC_ADMIN: 'clinic admin',
 		RECEPTIONIST: 'receptionist',
-		PATIENT: 'patient'
+		ENTRY_OPERATOR: 'entry operator'
 	},
 	appointment_status: {
 		BOOKED: 'Booked',
@@ -25,6 +29,13 @@ const constant = {
 		FREE: 'free',
 		SUBSCRIPTION: 'subscription',
 		TRIAL: 'trial'
+	},
+	gender_titles: {
+		DR: 'Dr',
+		MR: 'Mr',
+		MISS: 'Miss',
+		MRS: 'Mrs',
+		MS: 'Ms'
 	}
 };
 

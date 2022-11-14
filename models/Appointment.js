@@ -87,7 +87,7 @@ module.exports = (sequelize, DataTypes) => {
 				name: 'clinic_id',
 			},
 		});
-        Appointment.belongsTo(models.User, {
+        Appointment.belongsTo(models.Patient, {
 			foreignKey: {
 				name: 'patient_id',
 			},

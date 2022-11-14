@@ -18,17 +18,20 @@ module.exports = (sequelize, DataTypes) => {
         clinic_logo_url: {
             type: DataTypes.STRING(300)
         },
-        city_name: {
-            type: DataTypes.STRING(100),
-            allowNull: false,
+        city_id: {
+            type: DataTypes.INTEGER(10),
+            allowNull: false
         },
-        state: {
+        state_or_province: {
             type: DataTypes.STRING(64)
         },
         zip_code: {
             type: DataTypes.STRING(64)
         },
         phone: {
+            type: DataTypes.STRING(64)
+        },
+        email: {
             type: DataTypes.STRING(64)
         },
         enable_sms: {
@@ -61,6 +64,12 @@ module.exports = (sequelize, DataTypes) => {
     });
     Clinic.associate = function (models) {
         // associations can be defined here
+        Clinic.belongsTo(models.City, {
+			foreignKey: {
+				name: 'city_id',
+			},
+		});
+
         Clinic.hasMany(models.PhysicianService, {
             foreignKey: {
                 name: 'clinic_id'
