@@ -3,6 +3,16 @@ const constant = {
 		PRODUCTION: 'production',
 		DEV: 'dev',
 	},
+	genders: {
+		MALE: 'male',
+		FEMALE: 'female',
+		OTHER: 'other'
+	},
+	document_refrence_type: {
+		OTHER_DOCUMENTS: 'other',
+		EDUCTIONAL_DOCUMENTS: 'education',
+		ACHEIVEMENT_DOCUMENTS: 'acheivement'
+	},
 	primary_roles: {
 		SUPER_ADMIN: 'super admin',
 		PHYAICIAN: 'physician',
