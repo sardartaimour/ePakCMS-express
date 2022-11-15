@@ -3,6 +3,14 @@ const constant = {
 		PRODUCTION: 'production',
 		DEV: 'dev',
 	},
+	general_vital_supported: {
+		WEIGHT: 'Weight',
+		TEMP: 'Temperature',
+		PULSE: 'Pulse',
+		BLOOD_PRESSURE: 'Blood Pressure',
+		FASTING_BG: 'Blood Glucose (Fasting)',
+		RANDOM_BG: 'Blood Glucose (Random)'
+	},
 	boold_groups: {
 		A_POS: 'A+',
 		B_POS: 'B+',
