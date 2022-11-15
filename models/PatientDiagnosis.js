@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     }, {
         freezeTableName: true,
-        tableName: 'cms_patient_allergies',
+        tableName: 'cms_patient_diagnosis',
         underscored: true,
         timestamps: true,
         createdAt: 'created_at',

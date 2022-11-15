@@ -52,6 +52,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(64),
             unique: true
         },
+        personal_contact_number: { // in case of children don't having personal number
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false  
+        },
         complete_address: {
             type: DataTypes.STRING(150),
             allowNull: false
@@ -163,6 +168,11 @@ module.exports = (sequelize, DataTypes) => {
 			},
 		});
         Patient.hasMany(models.PatientDiagnosis, {
+			foreignKey: {
+				name: 'patient_id',
+			},
+		});
+        Patient.hasMany(models.PatientGaurdian, {
 			foreignKey: {
 				name: 'patient_id',
 			},

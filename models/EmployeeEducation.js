@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     }, {
         freezeTableName: true,
-        tableName: 'cms_employees_education',
+        tableName: 'cms_employee_educations',
         underscored: true,
         timestamps: true,
         createdAt: 'created_at',

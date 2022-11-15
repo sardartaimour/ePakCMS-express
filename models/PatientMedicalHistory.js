@@ -158,4 +158,3 @@ module.exports = (sequelize, DataTypes) => {
     return Patient;
 };
 
-// weight = CGColumn(Float, nullable=True)
