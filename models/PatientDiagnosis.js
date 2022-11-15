@@ -1,45 +1,53 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-    const EmployeeSpeciality = sequelize.define('EmployeeSpeciality', {
-        employee_speciality_id: {
+    const PatientDiagnosis = sequelize.define('PatientDiagnosis', {
+        diagnosis_id: {
             type: DataTypes.INTEGER(10),
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
         },
-        speciality: {
+        diagnose: {
             type: DataTypes.STRING(150),
             allowNull: false
         },
         description: {
-            type: DataTypes.STRING(300)
+            type: DataTypes.STRING(200)
         },
-        employee_id: {
+        clinic_id: {
+            type: DataTypes.INTEGER(10),
+            allowNull: false
+        },
+        patient_id: {
             type: DataTypes.INTEGER(10),
             allowNull: false
         }
-
     }, {
         freezeTableName: true,
-        tableName: 'cms_employee_specialities',
+        tableName: 'cms_patient_allergies',
         underscored: true,
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
         indexes: [
             {
-                fields: ['speciality']
+                fields: ['allergy']
             }
         ]
     });
-    EmployeeSpeciality.associate = function (models) {
+    PatientDiagnosis.associate = function (models) {
 
-        EmployeeSpeciality.belongsTo(models.Employee, {
+        PatientDiagnosis.belongsTo(models.Clinic, {
 			foreignKey: {
-				name: 'employee_id',
+				name: 'clinic_id',
+			},
+		});
+        PatientDiagnosis.belongsTo(models.Patient, {
+			foreignKey: {
+				name: 'patient_id',
 			},
 		});
     };
    
-    return EmployeeSpeciality;
+    return PatientDiagnosis;
 };

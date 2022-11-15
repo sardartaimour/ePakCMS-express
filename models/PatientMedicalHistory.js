@@ -1,15 +1,15 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-    const Employee = sequelize.define('Employee', {
-        employee_id: {
+    const Patient = sequelize.define('Patient', {
+        patient_id: {
             type: DataTypes.INTEGER(10),
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
         },
-        employee_no: {
+        mr_no: {
             type: DataTypes.STRING(20),
-            allowNull: false        
+            allowNull: false
         },
         title: {
             type: DataTypes.ENUM(Object.keys(constant.gender_titles)),
@@ -24,7 +24,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(64),
             allowNull: false
         },
-        emp_pic: {
+        father_husband_name: {
+            type: DataTypes.STRING(64),
+            // allowNull: false
+        },
+        patient_pic: {
             type: DataTypes.STRING(300)
         },
         gender: {
@@ -38,7 +42,6 @@ module.exports = (sequelize, DataTypes) => {
         },
         cnic: {
             type: DataTypes.STRING(20),
-            allowNull: false,
             unique: true
         },
         email: {
@@ -46,11 +49,6 @@ module.exports = (sequelize, DataTypes) => {
             unique: true
         },
         mobile_number: {
-            type: DataTypes.STRING(64),
-            allowNull: false,
-            unique: true
-        },
-        license_no: {
             type: DataTypes.STRING(64),
             unique: true
         },
@@ -67,6 +65,17 @@ module.exports = (sequelize, DataTypes) => {
         },
         zip_code: {
             type: DataTypes.STRING(64)
+        },
+        occupation: {
+            type: DataTypes.STRING(64)
+        },
+        height: { // in cm
+            type: DataTypes.INTEGER(10)
+        },
+        blood_group: {
+            type: DataTypes.ENUM(Object.keys(constant.boold_groups)),
+            allowNull: false,
+            defaultValue: constant.boold_groups.AB_POS
         },
         emergency_contact_person: {
             type: DataTypes.STRING(64)
@@ -116,13 +125,12 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             defaultValue: 0
         }
+
     }, {
         freezeTableName: true,
-        tableName: 'cms_employees',
+        tableName: 'cms_ptients',
         underscored: true,
         timestamps: true,
-        paranoid: true,             // for soft deletion
-        deletedAt: 'deleted_at',
         createdAt: 'created_at',
         updatedAt: 'updated_at',
         indexes: [
@@ -131,55 +139,23 @@ module.exports = (sequelize, DataTypes) => {
             }
         ]
     });
-    Employee.associate = function (models) {
-
-        Employee.belongsTo(models.City, {
+    Patient.associate = function (models) {
+        
+        Patient.belongsTo(models.City, {
 			foreignKey: {
 				name: 'city_id',
 			},
 		});
 
-        Employee.hasMany(models.EmployeeEducation, {
+    
+        Patient.hasMany(models.ClinicPatient, {
 			foreignKey: {
-				name: 'employee_id',
-			},
-		});
-        Employee.hasMany(models.EmployeeDocument, {
-			foreignKey: {
-				name: 'employee_id',
-			},
-		});
-        Employee.hasMany(models.EmployeeAcheivement, {
-			foreignKey: {
-				name: 'employee_id',
-			},
-		});
-        Employee.hasMany(models.EmployementHistory, {
-			foreignKey: {
-				name: 'employee_id',
-			},
-		});
-        Employee.hasMany(models.EmployeeSpeciality, {
-			foreignKey: {
-				name: 'employee_id',
-			},
-		});
-        Employee.hasMany(models.EmpClinicEmployeeloyee, {
-			foreignKey: {
-				name: 'employee_id',
-			},
-		});
-        Employee.hasMany(models.PhysicianService, {
-			foreignKey: {
-				name: 'employee_id',
-			},
-		});
-        Employee.hasMany(models.Appointment, {
-			foreignKey: {
-				name: 'employee_id',
+				name: 'patient_id',
 			},
 		});
     };
    
-    return Employee;
+    return Patient;
 };
+
+// weight = CGColumn(Float, nullable=True)

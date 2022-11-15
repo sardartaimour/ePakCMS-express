@@ -44,8 +44,8 @@ module.exports = (sequelize, DataTypes) => {
         ]
     });
     PhysicianService.associate = function (models) {
-        // associations can be defined here
-        PhysicianService.belongsTo(models.User, {
+
+        PhysicianService.belongsTo(models.Employee, {
 			foreignKey: {
 				name: 'physician_id',
 			},
@@ -63,5 +63,5 @@ module.exports = (sequelize, DataTypes) => {
         });
     };
    
-    return Clinic;
+    return PhysicianService;
 };

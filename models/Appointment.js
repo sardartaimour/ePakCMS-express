@@ -71,13 +71,13 @@ module.exports = (sequelize, DataTypes) => {
         ]
     });
     Appointment.associate = function (models) {
-        // associations can be defined here
+
         Appointment.belongsTo(models.PhysicianService, {
 			foreignKey: {
 				name: 'physician_service_id',
 			},
 		});
-        Appointment.belongsTo(models.User, {
+        Appointment.belongsTo(models.Employee, {
 			foreignKey: {
 				name: 'physician_id',
 			},

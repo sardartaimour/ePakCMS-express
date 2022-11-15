@@ -52,7 +52,7 @@ module.exports = (sequelize, DataTypes) => {
         ]
     });
     EmployeeEducation.associate = function (models) {
-        // associations can be defined here
+
         EmployeeEducation.belongsTo(models.Employee, {
 			foreignKey: {
 				name: 'employee_id',

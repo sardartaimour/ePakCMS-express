@@ -68,7 +68,7 @@ module.exports = (sequelize, DataTypes) => {
         ]
     });
     Clinic.associate = function (models) {
-        // associations can be defined here
+
         Clinic.belongsTo(models.City, {
 			foreignKey: {
 				name: 'city_id',
@@ -85,6 +85,31 @@ module.exports = (sequelize, DataTypes) => {
                 name: 'clinic_id'
             }
         });
+        Clinic.hasMany(models.ClinicEmployee, {
+			foreignKey: {
+				name: 'clinic_id',
+			},
+		});
+        Clinic.hasMany(models.ClinicPatient, {
+			foreignKey: {
+				name: 'clinic_id',
+			},
+		});
+        Clinic.hasMany(models.Patient, {
+			foreignKey: {
+				name: 'city_id',
+			},
+		});
+        Clinic.hasMany(models.PatientAllergy, {
+			foreignKey: {
+				name: 'clinic_id',
+			},
+		});
+        Clinic.hasMany(models.PatientDiagnosis, {
+			foreignKey: {
+				name: 'clinic_id',
+			},
+		});
     };
    
     return Clinic;

@@ -56,7 +56,7 @@ module.exports = (sequelize, DataTypes) => {
         updatedAt: 'updated_at'
     });
     EmployementHistory.associate = function (models) {
-        // associations can be defined here
+
         EmployementHistory.belongsTo(models.Employee, {
 			foreignKey: {
 				name: 'employee_id',

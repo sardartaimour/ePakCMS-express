@@ -3,6 +3,17 @@ const constant = {
 		PRODUCTION: 'production',
 		DEV: 'dev',
 	},
+	boold_groups: {
+		A_POS: 'A+',
+		B_POS: 'B+',
+		AB_POS: 'AB+',
+		O_POS: 'O+',
+		A_NEG: 'A-',
+		B_NEG: 'B-',
+		AB_NEG: 'AB-',
+		O_NEG: 'O-'
+
+	},
 	genders: {
 		MALE: 'Male',
 		FEMALE: 'Female',
@@ -29,12 +40,14 @@ const constant = {
 	primary_roles: {
 		SUPER_ADMIN: 'Super Admin',
 		PHYAICIAN: 'Physician',
-		EMPLOYEE: 'Employee'
+		EMPLOYEE: 'Employee',
+		NURSE: 'Nurse'
 	},
 	secondary_roles: {
 		CLINIC_ADMIN: 'Clinic Admin',
 		RECEPTIONIST: 'Receptionist',
-		ENTRY_OPERATOR: 'Entry Operator'
+		ENTRY_OPERATOR: 'Entry Operator',
+		NURSE: 'Nurse'
 	},
 	appointment_status: {
 		BOOKED: 'Booked',
