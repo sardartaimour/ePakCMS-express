@@ -45,7 +45,17 @@ module.exports = (sequelize, DataTypes) => {
 			},
 		});
 
+        City.hasMany(models.Clinic, {
+			foreignKey: {
+				name: 'city_id',
+			},
+		});
         City.hasMany(models.Employee, {
+			foreignKey: {
+				name: 'city_id',
+			},
+		});
+        City.hasMany(models.EmployementHistory, {
 			foreignKey: {
 				name: 'city_id',
 			},

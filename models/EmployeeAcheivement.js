@@ -1,67 +1,50 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-    const Clinic = sequelize.define('Clinic', {
-        clinic_id: {
+    const EmployeeAcheivement = sequelize.define('EmployeeAcheivement', {
+        employee_acheivement_id: {
             type: DataTypes.INTEGER(10),
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
         },
-        clinic_name: {
+        title: {
             type: DataTypes.STRING(150),
             allowNull: false
         },
-        clinic_address: {
-            type: DataTypes.STRING(300),
+        remarks: {
+            type: DataTypes.STRING(512)
+        },
+        orginization_name: { // in case of certificate 
+            type: DataTypes.STRING(150)        },
+        date: {
+            type: DataTypes.DATE
+        },
+        acheivement_type: {
+            type: DataTypes.ENUM(Object.keys(constant.employee_acheivements_type)),
+            allowNull: false,
+            defaultValue: constant.employee_acheivements_type.CERTIFICATE
+        },
+        employee_id: {
+            type: DataTypes.INTEGER(10),
             allowNull: false
-        },
-        clinic_logo_url: {
-            type: DataTypes.STRING(300)
-        },
-        city_name: {
-            type: DataTypes.STRING(100),
-            allowNull: false,
-        },
-        state: {
-            type: DataTypes.STRING(64)
-        },
-        zip_code: {
-            type: DataTypes.STRING(64)
-        },
-        phone: {
-            type: DataTypes.STRING(64)
-        },
-        enable_sms: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            defaultValue: false,        
-        },
-        subscription_type: {
-            type: DataTypes.ENUM(Object.keys(constant.subscription_type)),
-            allowNull: false,
-            defaultValue: constant.subscription_type.TRIAL,  
-        },
-        subscription_upto: {
-            type: DataTypes.DATE,
-            defaultValue: helper.moment(new Date()).add(1, 'months')
         }
 
     }, {
         freezeTableName: true,
-        tableName: 'cms_clinics',
+        tableName: 'cms_employee_acheivements',
         underscored: true,
         timestamps: true,
         createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        indexes: [
-            {
-                fields: ['clinic_name', 'clinic_address']
-            }
-        ]
+        updatedAt: 'updated_at'
     });
-    Clinic.associate = function (models) {
+    EmployeeAcheivement.associate = function (models) {
         // associations can be defined here
+        EmployeeAcheivement.belongsTo(models.Employee, {
+			foreignKey: {
+				name: 'employee_id',
+			},
+		});
     };
    
-    return Clinic;
+    return EmployeeAcheivement;
 };

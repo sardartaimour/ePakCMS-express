@@ -7,13 +7,16 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
             primaryKey: true,
         },
-        reference_id: {
+        reference_id: { // this could be Emp Eduction id or Emp Acheivement id or Emp history id
             type: DataTypes.INTEGER(10)
         },
         reference_type: {
             type: DataTypes.ENUM(Object.keys(constant.document_refrence_type)),
             allowNull: false,
-            defaultValue: constant.document_refrence_type.OTHER_DOCUMENTS, 
+            defaultValue: constant.document_refrence_type.OTHER_DOCUMENTS
+        },
+        remarks: {
+            type: DataTypes.STRING(512)
         },
         document_url: {
             type: DataTypes.STRING(200),

@@ -4,24 +4,37 @@ const constant = {
 		DEV: 'dev',
 	},
 	genders: {
-		MALE: 'male',
-		FEMALE: 'female',
-		OTHER: 'other'
+		MALE: 'Male',
+		FEMALE: 'Female',
+		OTHER: 'Other'
 	},
 	document_refrence_type: {
-		OTHER_DOCUMENTS: 'other',
-		EDUCTIONAL_DOCUMENTS: 'education',
-		ACHEIVEMENT_DOCUMENTS: 'acheivement'
+		OTHER_DOCUMENTS: 'Others', // such as NIC etc
+		EDUCTIONAL_DOCUMENTS: 'Educational',
+		ACHEIVEMENT_DOCUMENTS: 'Acheivements',
+		EXPERIENCE_LETTER: 'Experience-Letter'
+	},
+	employee_job_type: {
+		PERMANENT: 'Permanent',
+		TEMPORARY: 'Temporary',
+		PARTTIME: 'Part-time',
+		INTERNSHIP: 'Internship',
+		HOUSEJOB: 'House-job'
+	},
+	employee_acheivements_type: {
+		CERTIFICATE: 'Certificate',
+		REWARD: 'Reward',
+		ACHEIVEMENT: 'Acheivement'
 	},
 	primary_roles: {
-		SUPER_ADMIN: 'super admin',
-		PHYAICIAN: 'physician',
-		EMPLOYEE: 'employee'
+		SUPER_ADMIN: 'Super Admin',
+		PHYAICIAN: 'Physician',
+		EMPLOYEE: 'Employee'
 	},
 	secondary_roles: {
-		CLINIC_ADMIN: 'clinic admin',
-		RECEPTIONIST: 'receptionist',
-		ENTRY_OPERATOR: 'entry operator'
+		CLINIC_ADMIN: 'Clinic Admin',
+		RECEPTIONIST: 'Receptionist',
+		ENTRY_OPERATOR: 'Entry Operator'
 	},
 	appointment_status: {
 		BOOKED: 'Booked',
@@ -36,9 +49,9 @@ const constant = {
 		AVAILABLE_ON_CALL: 'Available On Call'
 	},
 	subscription_type: {
-		FREE: 'free',
-		SUBSCRIPTION: 'subscription',
-		TRIAL: 'trial'
+		FREE: 'Free',
+		SUBSCRIPTION: 'Subscription',
+		TRIAL: 'Trial'
 	},
 	gender_titles: {
 		DR: 'Dr',
