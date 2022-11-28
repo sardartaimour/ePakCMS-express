@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         description: {
-            type: DataTypes.STRING(200)
+            type: DataTypes.STRING(500)
         },
         clinic_id: {
             type: DataTypes.INTEGER(10),
