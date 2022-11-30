@@ -21,12 +21,12 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: constant.week_days.SUN
         },
         start_time: {
-            type: DataTypes.DATETIME,
+            type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW
         },
         end_time: {
-            type: DataTypes.DATETIME,
+            type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW
         },

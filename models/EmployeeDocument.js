@@ -20,8 +20,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         document_url: {
             type: DataTypes.STRING(200),
-            a,
-            llowNull: false
+            allowNull: false
         },
         employee_id: {
             type: DataTypes.INTEGER(10),

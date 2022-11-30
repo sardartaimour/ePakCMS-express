@@ -7,18 +7,18 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
             primaryKey: true,
         },
-        name: {
-            type: DataTypes.INTEGER(64),
+        country_name: {
+            type: DataTypes.STRING(64),
             allowNull: false
         },
         dial_code: {
-            type: DataTypes.INTEGER(10)
+            type: DataTypes.STRING(10)
         },
         country_code: {
-            type: DataTypes.INTEGER(10)
+            type: DataTypes.STRING(10)
         },
         flag: {
-            type: DataTypes.INTEGER(264)
+            type: DataTypes.STRING(512)
         }
 
     }, {

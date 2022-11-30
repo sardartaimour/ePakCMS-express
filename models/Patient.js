@@ -114,16 +114,16 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: false
         },
         blocked_on: {
-            type: DataTypes.DATTIME
+            type: DataTypes.DATE
         },
         block_reason: {
             type: DataTypes.STRING(100)
         },
         last_success_login: {
-            type: DataTypes.DATTIME
+            type: DataTypes.DATE
         },
         last_failed_login: {
-            type: DataTypes.DATTIME
+            type: DataTypes.DATE
         },
         failed_login_attempts: {
             type: DataTypes.INTEGER(10),

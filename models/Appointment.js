@@ -27,12 +27,12 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(30)
         },
         appointment_cost: {
-            type: FLOAT(11,2),
+            type: DataTypes.FLOAT(11,2),
             allowNull: false,
             defaultValue: 0.0
         },
         discount: {
-            type: FLOAT(11,2),
+            type:DataTypes. FLOAT(11,2),
             allowNull: false,
             defaultValue: 0.0
         },
@@ -40,11 +40,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(1024)
         },
         start_datetime: {
-            type: DataTypes.DATETIME,
+            type: DataTypes.DATE,
             allowNull: false,
         },
         end_datetime: {
-            type: DataTypes.DATETIME,
+            type: DataTypes.DATE,
             allowNull: false,
         },
         appointment_status: {

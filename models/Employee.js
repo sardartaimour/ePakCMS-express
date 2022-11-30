@@ -103,16 +103,16 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: false
         },
         blocked_on: {
-            type: DataTypes.DATTIME
+            type: DataTypes.DATE
         },
         block_reason: {
             type: DataTypes.STRING(100)
         },
         last_success_login: {
-            type: DataTypes.DATTIME
+            type: DataTypes.DATE
         },
         last_failed_login: {
-            type: DataTypes.DATTIME
+            type: DataTypes.DATE
         },
         failed_login_attempts: {
             type: DataTypes.INTEGER(10),
@@ -167,7 +167,7 @@ module.exports = (sequelize, DataTypes) => {
 				name: 'employee_id',
 			},
 		});
-        Employee.hasMany(models.EmpClinicEmployeeloyee, {
+        Employee.hasMany(models.ClinicEmployee, {
 			foreignKey: {
 				name: 'employee_id',
 			},
@@ -182,7 +182,7 @@ module.exports = (sequelize, DataTypes) => {
 				name: 'employee_id',
 			},
 		});
-        Employee.hasMany(models.EmpPhysicianScheduleloyee, {
+        Employee.hasMany(models.PhysicianService, {
 			foreignKey: {
 				name: 'employee_id',
 			},

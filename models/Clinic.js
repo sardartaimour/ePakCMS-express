@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: false      
         },
         registration_fee: {
-            type: FLOAT(11,2),
+            type: DataTypes.FLOAT(11,2),
             allowNull: false,
             defaultValue: 0.0
         },
@@ -100,16 +100,16 @@ module.exports = (sequelize, DataTypes) => {
 				name: 'city_id',
 			},
 		});
-        Clinic.hasMany(models.PatientAllergy, {
-			foreignKey: {
-				name: 'clinic_id',
-			},
-		});
-        Clinic.hasMany(models.PatientDiagnosis, {
-			foreignKey: {
-				name: 'clinic_id',
-			},
-		});
+        // Clinic.hasMany(models.PatientAllergy, {
+		// 	foreignKey: {
+		// 		name: 'clinic_id',
+		// 	},
+		// });
+        // Clinic.hasMany(models.PatientDiagnosis, {
+		// 	foreignKey: {
+		// 		name: 'clinic_id',
+		// 	},
+		// });
         Clinic.hasMany(models.PhysicianSchedule, {
 			foreignKey: {
 				name: 'clinic_id',

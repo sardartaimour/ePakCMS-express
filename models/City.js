@@ -12,10 +12,10 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         lat: {
-            type: DataTypes.STRING(15)
+            type: DataTypes.STRING(30)
         },
         lng: {
-            type: DataTypes.STRING(15)
+            type: DataTypes.STRING(30)
         },
         country_id: {
             type: DataTypes.INTEGER(10),

@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         service_cost: {
-            type: FLOAT(11,2),
+            type: DataTypes.FLOAT(11,2),
             allowNull: false,
             defaultValue: 0.0
         },
