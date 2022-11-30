@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false        
         },
         title: {
-            type: DataTypes.ENUM(Object.keys(constant.gender_titles)),
+            type: DataTypes.ENUM(Object.values(constant.gender_titles)),
             allowNull: false,
             defaultValue: constant.gender_titles.MR
         },
@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(300)
         },
         gender: {
-            type: DataTypes.ENUM(Object.keys(constant.genders)),
+            type: DataTypes.ENUM(Object.values(constant.genders)),
             allowNull: false,
             defaultValue: constant.genders.MALE
         },

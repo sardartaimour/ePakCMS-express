@@ -48,13 +48,12 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: 0.0
         },
         subscription_type: {
-            type: DataTypes.ENUM(Object.keys(constant.subscription_type)),
+            type: DataTypes.ENUM(Object.values(constant.subscription_type)),
             allowNull: false,
             defaultValue: constant.subscription_type.TRIAL,  
         },
         subscription_upto: {
-            type: DataTypes.DATE,
-            defaultValue: helper.moment(new Date()).add(1, 'months')
+            type: DataTypes.DATE
         }
 
     }, {

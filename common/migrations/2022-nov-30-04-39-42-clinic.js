@@ -1,3 +1,5 @@
+const constants = require('../config/constants').bootstrap();
+
 "use strict";
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -54,13 +56,12 @@ module.exports = {
                 defaultValue: 0.0
             },
             subscription_type: {
-                type: Sequelize.ENUM(Object.keys(constant.subscription_type)),
+                type: Sequelize.ENUM(Object.values(constant.subscription_type)),
                 allowNull: false,
                 defaultValue: constant.subscription_type.TRIAL,  
             },
             subscription_upto: {
-                type: Sequelize.DATE,
-                defaultValue: helper.moment(new Date()).add(1, 'months')
+                type: Sequelize.DATE
             },
             created_at: {
                 allowNull: false,
