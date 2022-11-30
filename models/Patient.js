@@ -162,16 +162,16 @@ module.exports = (sequelize, DataTypes) => {
 				name: 'patient_id',
 			},
 		});
-        Patient.hasMany(models.PatientAllergy, {
-			foreignKey: {
-				name: 'patient_id',
-			},
-		});
-        Patient.hasMany(models.PatientDiagnosis, {
-			foreignKey: {
-				name: 'patient_id',
-			},
-		});
+        // Patient.hasMany(models.PatientAllergy, {
+		// 	foreignKey: {
+		// 		name: 'patient_id',
+		// 	},
+		// });
+        // Patient.hasMany(models.PatientDiagnosis, {
+		// 	foreignKey: {
+		// 		name: 'patient_id',
+		// 	},
+		// });
         Patient.hasMany(models.PatientGaurdian, {
 			foreignKey: {
 				name: 'patient_id',
@@ -181,5 +181,3 @@ module.exports = (sequelize, DataTypes) => {
    
     return Patient;
 };
-
-// weight = CGColumn(Float, nullable=True)

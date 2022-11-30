@@ -54,6 +54,9 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(64),
             unique: true
         },
+        speciality_id: {
+            type: DataTypes.INTEGER(10)
+        },
         complete_address: {
             type: DataTypes.STRING(150),
             allowNull: false
@@ -138,6 +141,11 @@ module.exports = (sequelize, DataTypes) => {
 				name: 'city_id',
 			},
 		});
+        Employee.belongsTo(models.Speciality, {
+			foreignKey: {
+				name: 'speciality_id',
+			},
+		});
 
         Employee.hasMany(models.EmployeeEducation, {
 			foreignKey: {
@@ -159,11 +167,6 @@ module.exports = (sequelize, DataTypes) => {
 				name: 'employee_id',
 			},
 		});
-        Employee.hasMany(models.EmployeeSpeciality, {
-			foreignKey: {
-				name: 'employee_id',
-			},
-		});
         Employee.hasMany(models.EmpClinicEmployeeloyee, {
 			foreignKey: {
 				name: 'employee_id',
@@ -175,6 +178,16 @@ module.exports = (sequelize, DataTypes) => {
 			},
 		});
         Employee.hasMany(models.Appointment, {
+			foreignKey: {
+				name: 'employee_id',
+			},
+		});
+        Employee.hasMany(models.EmpPhysicianScheduleloyee, {
+			foreignKey: {
+				name: 'employee_id',
+			},
+		});
+        Employee.hasMany(models.PhysicianException, {
 			foreignKey: {
 				name: 'employee_id',
 			},

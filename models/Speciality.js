@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-    const EmployeeSpeciality = sequelize.define('EmployeeSpeciality', {
-        employee_speciality_id: {
+    const Speciality = sequelize.define('Speciality', {
+        speciality_id: {
             type: DataTypes.INTEGER(10),
             allowNull: false,
             autoIncrement: true,
@@ -13,15 +13,11 @@ module.exports = (sequelize, DataTypes) => {
         },
         description: {
             type: DataTypes.STRING(300)
-        },
-        employee_id: {
-            type: DataTypes.INTEGER(10),
-            allowNull: false
         }
 
     }, {
         freezeTableName: true,
-        tableName: 'cms_employee_specialities',
+        tableName: 'cms_specialities',
         underscored: true,
         timestamps: true,
         createdAt: 'created_at',
@@ -32,14 +28,15 @@ module.exports = (sequelize, DataTypes) => {
             }
         ]
     });
-    EmployeeSpeciality.associate = function (models) {
 
-        EmployeeSpeciality.belongsTo(models.Employee, {
+    Speciality.associate = function (models) {
+
+        Speciality.hasMany(models.Employee, {
 			foreignKey: {
-				name: 'employee_id',
+				name: 'speciality_id',
 			},
 		});
     };
-   
-    return EmployeeSpeciality;
+    
+    return Speciality;
 };

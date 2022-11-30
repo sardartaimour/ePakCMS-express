@@ -80,6 +80,15 @@ const constant = {
 		MISS: 'Miss',
 		MRS: 'Mrs',
 		MS: 'Ms'
+	},
+	week_days: {
+		MON: 'Monday',
+		TUE: 'Tuesday',
+		WED: 'Wednesday',
+		THU: 'Thursday',
+		FRI: 'Friday',
+		SAT: 'Saturday',
+		SUN: 'Sunday'
 	}
 };
 

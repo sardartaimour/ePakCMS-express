@@ -42,6 +42,11 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             defaultValue: false      
         },
+        registration_fee: {
+            type: FLOAT(11,2),
+            allowNull: false,
+            defaultValue: 0.0
+        },
         subscription_type: {
             type: DataTypes.ENUM(Object.keys(constant.subscription_type)),
             allowNull: false,
@@ -106,6 +111,16 @@ module.exports = (sequelize, DataTypes) => {
 			},
 		});
         Clinic.hasMany(models.PatientDiagnosis, {
+			foreignKey: {
+				name: 'clinic_id',
+			},
+		});
+        Clinic.hasMany(models.PhysicianSchedule, {
+			foreignKey: {
+				name: 'clinic_id',
+			},
+		});
+        Clinic.hasMany(models.PhysicianException, {
 			foreignKey: {
 				name: 'clinic_id',
 			},

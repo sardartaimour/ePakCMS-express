@@ -23,6 +23,9 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER(10),
             allowNull: false
         },
+        appointment_no: {
+            type: DataTypes.STRING(30)
+        },
         appointment_cost: {
             type: FLOAT(11,2),
             allowNull: false,
@@ -53,6 +56,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(5000)
         },
         is_sms_sent: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
+        },
+        reminder_sms: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
             defaultValue: false
